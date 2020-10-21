@@ -64,7 +64,10 @@ namespace MenuBuilder
                         break;
 
                     case ConsoleKey.UpArrow:
-                        selectedOption = (selectedOption - 1) % totalOptions;
+			selectedOption--;
+			if (selectedOption < 0) {
+			    selectedOption = totalOptions - 1;
+			}
                         break;
 
                     case ConsoleKey.Spacebar:
