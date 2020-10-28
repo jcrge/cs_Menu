@@ -17,7 +17,7 @@ namespace MainForTesting
 
             menu.Options.Add(new Option("Option 1", Opt1));
             menu.Options.Add(new Option("Option 2", Opt2));
-            menu.Options.Add(new Option("Option 3", Opt2));
+            menu.Options.Add(new Option("Option 3", Opt3));
 
             menu.Loop = true;
             menu.QuitOption = true;
