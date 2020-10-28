@@ -86,11 +86,9 @@ namespace MenuBuilder
                             ConsoleColor oldFg = Console.ForegroundColor;
 
                             Console.WriteLine();
-                            Console.BackgroundColor = oldFg;
-                            Console.ForegroundColor = oldBg;
+                            InvertConsoleColors();
                             Console.Write("Pulsa ENTER para volver. ");
-                            Console.BackgroundColor = oldBg;
-                            Console.ForegroundColor = oldFg;
+                            InvertConsoleColors();
 
                             while (Console.ReadKey().Key != ConsoleKey.Enter);
 
