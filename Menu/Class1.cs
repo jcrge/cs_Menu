@@ -60,10 +60,12 @@ namespace MenuBuilder
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.DownArrow:
+                    case ConsoleKey.J:
                         selectedOption = (selectedOption + 1) % totalOptions;
                         break;
 
                     case ConsoleKey.UpArrow:
+                    case ConsoleKey.K:
                         selectedOption--;
                         if (selectedOption < 0) {
                             selectedOption = totalOptions - 1;
@@ -72,6 +74,7 @@ namespace MenuBuilder
 
                     case ConsoleKey.Spacebar:
                     case ConsoleKey.Enter:
+                    case ConsoleKey.L:
                         Console.Clear();
 
                         if (selectedOption == Options.Count)
@@ -90,7 +93,13 @@ namespace MenuBuilder
                             Console.Write("Pulsa ENTER para volver. ");
                             InvertConsoleColors();
 
-                            while (Console.ReadKey().Key != ConsoleKey.Enter);
+                            ConsoleKey lastKey;
+                            do
+                            {
+                                lastKey = Console.ReadKey().Key;
+                            } while (lastKey != ConsoleKey.Enter
+                                && lastKey != ConsoleKey.Q
+                                && lastKey != ConsoleKey.H);
 
                             if (!Loop)
                             {
